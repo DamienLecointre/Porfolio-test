@@ -1,0 +1,344 @@
+#homepage-container  {
+
+  .resume-container {
+    position: absolute;
+    height: 100%;
+    width: 94%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 0;
+    bottom: 0;
+    transform: translateY(0);
+    z-index: 500;
+
+    h3 {
+      font-size: $font-size192;
+      text-align: center;
+    }
+
+    h4:not(.title-section) {
+      font-size: $font-size16;
+      position: relative;
+      text-align: center;
+    }
+  }
+
+  .resume-container-slide-up {
+    animation: resumeContainerSlideUp .5s ease-out 4s forwards;
+
+    @keyframes resumeContainerSlideUp {
+      to {
+        transform: translateY(-100vh);
+      }
+    }
+  }
+
+  .title-section {
+    position: relative;
+    text-align: center;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      background: $color-accent;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .resume-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 20% 40% 40%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .skills-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .skills-wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-top: $space-small2;
+  }
+
+  .skills-content {
+    height: 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .logo-container {
+    width: 15px;
+    @extend %flex-center;
+
+    i {
+      height: 100%;
+      color: $color-accent;
+    }
+
+    svg {
+      height: 15px;
+      width: 15px;
+    }
+  }
+
+  .skill-cursor {
+    height: 100%;
+    width: 150px;
+    border: 1px solid $bg-light-dark; 
+    border-radius: 2px;
+    padding: 3px;
+    overflow: hidden;
+  }
+
+  .skill-level {
+    height: 100%;
+    background: $bg-accent;
+  }
+
+  .html-level,
+  .css-level,
+  .scss-level {
+    width: 85%;
+    transform: translateX(-100%);
+  }
+
+  .js-level,
+  .git-level,
+  .github-level {
+    width: 70%;
+    transform: translateX(-100%);
+  }
+
+  .node-level,
+  .react-level {
+    width: 60%;
+    transform: translateX(-100%);
+  }
+
+  .psd-level,
+  .ai-level,
+  .id-level {
+    width: 90%;
+    transform: translateX(-100%);
+  }
+
+  .date-content {
+    position: relative;
+    padding-right: $space-small1;
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 1px;
+      background: $bg-accent;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  .date-color-accent {
+    color: $color-accent;
+  }
+
+  .formation-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 $space-small2;
+  }
+
+  .formation-wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .formation-content {
+    width: 100%;
+    display: flex;
+    padding-top: $space-small2;
+  }
+
+  .experience-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    p {
+      text-align: justify;
+    }
+
+    p:not(.title-paragraph) {
+      padding-top: $space-tiny1;
+    }
+  }
+
+  .experience-content {
+    display: flex;
+  }
+
+  .experience-content:nth-of-type(1) {
+    padding-top: $space-small2;
+    padding-bottom: $space-small1;
+  }
+
+  .text-content {
+    padding-left: $space-small1;
+
+    p {
+      font-size: $font-size16;
+    }
+  }
+
+  .title-paragraph {
+    width: fit-content;
+    position: relative;
+    text-transform: uppercase;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      background: $color-accent;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .resume-title,
+  .skills-container,
+  .formation-container,
+  .experience-container,
+  .resume-arrow {
+    @extend %item-hidden;
+    transform: translateY(100vh);
+  }
+
+  .resume-title-slide-up {
+    animation: resumeTextsSlideUp 5s ease-out forwards;
+
+    @keyframes resumeTextsSlideUp {
+      0% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(100vh);
+      }
+      100% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .resume-title-slide-up2 {
+    animation: resumeTextsSlideUp2 12s ease-out forwards;
+
+    @keyframes resumeTextsSlideUp2 {
+      0% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      100% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-100vh);
+      }
+    }
+  }
+
+  .skills-container-slide-up {
+    animation: resumeTextsSlideUp 3s ease-out 1s forwards;
+  }
+
+  .skills-container-slide-up2 {
+    animation: resumeTextsSlideUp2 5s ease-out forwards;
+
+    @keyframes resumeTextsSlideUp2 {
+      0% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      100% {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-100vh);
+      }
+    }
+  }
+
+  .skill-level-full-width {
+    animation: skillLevelFullWidth 2.5s ease-out 5s forwards;
+
+    @keyframes skillLevelFullWidth {
+      to {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  .formation-container-slide-up {
+    animation: resumeTextsSlideUp 3.5s ease-out 1.5s forwards;
+  }
+
+  .formation-container-slide-up2 {
+    animation: resumeTextsSlideUp2 5.5s ease-out forwards;
+  }
+
+  .experience-container-slide-up {
+    animation: resumeTextsSlideUp 3s ease-out 2s forwards;
+  }
+
+  .experience-container-slide-up2 {
+    animation: resumeTextsSlideUp2 6s ease-out forwards;
+  }
+
+  .resume-arrow-slide-up {
+    animation: resumeTitleSlideUp 2.5s ease-out forwards;
+
+    @keyframes resumeTitleSlideUp {
+      0%{
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(100vh);
+      }
+      20% {
+        opacity: 1;
+        visibility: visible;
+      }
+      100% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+  }
+}

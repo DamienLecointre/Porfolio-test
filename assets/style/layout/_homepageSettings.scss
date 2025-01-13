@@ -1,0 +1,37 @@
+#homepage-container {
+
+  .hero-container {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 80% 20%;
+    background: $bg-dark;
+    padding: 5em 3em;
+    overflow: hidden;
+  }
+
+  .hero-left-part {
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+
+  @keyframes PortfoliotextShow {
+    to {
+      opacity: 1;
+      visibility: visible;
+    } 
+  }
+
+  .skip-intro-animation {
+    animation: skipintro 3s ease-in-out forwards;
+
+    @keyframes skipintro {
+      to {
+        opacity: 1;
+        visibility: visible;
+      } 
+    }
+  }
+}

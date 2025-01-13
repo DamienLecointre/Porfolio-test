@@ -1,0 +1,18 @@
+#homepage-container {
+  .works-container {
+    position: absolute;
+    height: 100%;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+
+    h3 {
+      font-size: $font-size192;
+      text-align: center;
+    }
+  }
+}
