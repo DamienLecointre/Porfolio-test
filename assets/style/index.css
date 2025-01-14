@@ -834,6 +834,8 @@ p {
   width: 50px;
   bottom: 0;
   left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   cursor: pointer;
 }
 #homepage-container .arrow-container:hover .arrow-circle {
@@ -1857,10 +1859,126 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding: 0 2em;
   top: 0;
   left: 0;
 }
 #homepage-container .works-container h3 {
-  font-size: 12rem;
+  font-size: 10rem;
   text-align: center;
+}
+#homepage-container .projects-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+#homepage-container .projects-wrapper {
+  position: absolute;
+  height: 60%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 50%;
+  -webkit-transform: translateY(-65%);
+          transform: translateY(-65%);
+}
+#homepage-container .project-content {
+  position: absolute;
+  height: 100%;
+  width: calc((100% - 4em) / 3);
+  border: 1px solid #ff6f28;
+  overflow: hidden;
+  top: 50%;
+}
+#homepage-container .project-content a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+#homepage-container .project-content img {
+  width: 100%;
+}
+#homepage-container .gaming-campus-content {
+  left: 0;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+#homepage-container .restaurant-content {
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+#homepage-container .atlantis-thepalm-content {
+  right: 0;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+#homepage-container .website4 {
+  right: 0;
+  -webkit-transform: translate(calc(100% + 2em), -50%);
+          transform: translate(calc(100% + 2em), -50%);
+}
+#homepage-container .website5 {
+  right: 0;
+  -webkit-transform: translate(calc(200% + 4em), -50%);
+          transform: translate(calc(200% + 4em), -50%);
+}
+#homepage-container .website6 {
+  right: 0;
+  -webkit-transform: translate(calc(400% + 6em), -50%);
+          transform: translate(calc(400% + 6em), -50%);
+}
+#homepage-container .underline-content {
+  position: absolute;
+  width: 100%;
+}
+#homepage-container .underline-top {
+  top: -30px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+#homepage-container .underline-bottom {
+  bottom: -30px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+#homepage-container .underline {
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background: #ff6f28;
+}
+#homepage-container .scroll-dot {
+  position: absolute;
+  height: 8px;
+  width: 30px;
+  background: #bdbdbd;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+}
+#homepage-container .scroll-dot-left {
+  left: 50%;
+  -webkit-transform: translate(calc(-150% - 2em), -50%);
+          transform: translate(calc(-150% - 2em), -50%);
+  background: #ff6f28;
+}
+#homepage-container .scroll-dot-middle {
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+#homepage-container .scroll-dot-right {
+  left: 50%;
+  -webkit-transform: translate(calc(100% + 1em), -50%);
+          transform: translate(calc(100% + 1em), -50%);
 }/*# sourceMappingURL=index.css.map */
