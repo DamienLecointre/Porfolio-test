@@ -55,9 +55,18 @@ const resumeLink = document.querySelector(".resume-link");
 
 // WORKS CONSTANTS
 
-// const worksContainer = document.querySelector(".works-container");
+const worksContainer = document.querySelector(".works-container");
+const worksTitle = document.querySelector(".works-title");
+const website1 = document.querySelector(".website1");
+const website2 = document.querySelector(".website2");
+const website3 = document.querySelector(".website3");
+const underlineTop = document.querySelector(".underline-top");
+const underlineBottom = document.querySelector(".underline-bottom");
+const worksArrow = document.querySelector(".works-arrow");
+const worksArrowCircle = document.querySelector(".works-arrow-circle");
+const worksChevron = document.querySelector(".works-chevron");
 
-// console.log(skillsContainer);
+// console.log(e.target.id);
 
 // -------------------------------------------------------------------------------
 
@@ -105,6 +114,28 @@ aboutLink.addEventListener("click", () => {
   aboutTitle.classList.add("about-title-slide-up");
   aboutArrow.classList.add("about-arrow-slide-up");
   aboutLink.classList.add("navLink-visited");
+  // ******************************************************************
+  // aboutArrowCircle.classList.remove("arrow-circle-hidden");
+  // aboutChevron.classList.remove("chevron-hidden");
+  // aboutTextContainer.classList.remove("text-container-slide-up2");
+  // aboutTitle.classList.remove("about-title-slide-up2");
+  // aboutContainer.classList.remove("about-container-slide-up");
+  // skillsContainer.classList.remove("skills-container-slide-up");
+  // htmlLevel.classList.remove("skill-level-full-width");
+  // cssLevel.classList.remove("skill-level-full-width");
+  // scssLevel.classList.remove("skill-level-full-width");
+  // jsLevel.classList.remove("skill-level-full-width");
+  // nodeLevel.classList.remove("skill-level-full-width");
+  // reactLevel.classList.remove("skill-level-full-width");
+  // gitLevel.classList.remove("skill-level-full-width");
+  // githubLevel.classList.remove("skill-level-full-width");
+  // psdLevel.classList.remove("skill-level-full-width");
+  // aiLevel.classList.remove("skill-level-full-width");
+  // idLevel.classList.remove("skill-level-full-width");
+  // formationContainer.classList.remove("formation-container-slide-up");
+  // experienceContainer.classList.remove("experience-container-slide-up");
+  // resumeArrow.classList.remove("resume-arrow-slide-up");
+  // resumeLink.classList.remove("navLink-visited");
 });
 
 // SKIP ABOUT CONTAINER TO EXPERIENCE CONTAINER

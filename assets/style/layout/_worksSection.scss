@@ -5,7 +5,6 @@
     width: 95%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
     flex-direction: column;
     padding: 0 $space-small2;
     top: 0;
@@ -14,6 +13,10 @@
     h3 {
       font-size: 10rem;
       text-align: center;
+    }
+
+    .works-title {
+      transform: translateY(-100vh);
     }
   }
 
@@ -31,7 +34,7 @@
     display: flex;
     align-items: center;
     top: 50%;
-    transform: translateY(-65%);
+    transform: translateY(-50%);
   }
 
   .project-content {
@@ -39,34 +42,123 @@
     height: 100%;
     width: calc((100% - 4em) / 3);
     border: 1px solid $bg-accent;
-    overflow: hidden;
     top: 50%;
+    overflow: hidden;
+    cursor: pointer;
 
-    a {
-      display: block;
+    &::before {
+      content: '';
+      position: absolute;
       height: 100%;
       width: 100%;
-      cursor: pointer;
+      background: $bg-accent;
+      opacity: 0;
+      top: 0;
+      left: 0;
+      transition: all .5s ease-in-out;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 70%;
+      background: $bg-light;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scaleX(0);
+      transition: all .5s ease-in-out;
+    }
+
+    &:hover {
+      border: 1px solid $bg-light;
+    }
+
+    &:hover::before {
+      opacity: 1;
+    }
+
+    &:hover::after {
+      transform: translate(-50%, -50%) scaleX(100%);
+    }
+
+    &:hover .project-title {
+      transform: translateY(320%);
+    }
+
+    &:hover .project-subtitle {
+      transform: translateY(-320%);
+    }
+
+    &:hover .project-icons-container {
+      opacity: 1;
+      visibility: visible;
+      transition: all .8s ease-in-out;
+    }
+
+    &:hover .project-details {
+      transform: translateY(0);
     }
 
     img {
       width: 100%;
     }
+
+    .project-title,
+    .project-subtitle {
+      position: absolute;
+      font-size: $font-size16;
+      font-weight: $font-weight400;
+      color: $color-light;
+      letter-spacing: .15rem;
+      width: 100%;
+      text-align: center;
+      transition: all .5s ease-in-out;
+    }
+
+    .project-title {
+      top: 0;
+      font-weight: $font-weight500;
+      transform: translateY(-100%);
+    }
+
+    .project-subtitle {
+      bottom: 0;
+      transform: translateY(100%);
+      padding: 0 $space-small1;
+    }
   }
 
-  .gaming-campus-content {
-    left: 0;
-    transform: translate(0, -50%);
-  }
-
-  .restaurant-content {
+  .project-icons-container {
+    position: absolute;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $bg-accent;
     left: 50%;
-    transform: translate(-50%, -50%);
+    bottom: 50%;
+    padding: 0 $space-small1;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, 50%);
+    transition: transform .5s ease-in-out;
+    z-index: 5;
   }
 
-  .atlantis-thepalm-content {
+  .website1 {
+    left: 0;
+    transform: translate(0, 100vh);
+  }
+
+  .website2 {
+    left: 50%;
+    transform: translate(-50%, 100vh);
+  }
+
+  .website3 {
     right: 0;
-    transform: translate(0, -50%);
+    transform: translate(0, 100vh);
   }
 
   .website4 {
@@ -86,16 +178,17 @@
 
   .underline-content {
     position: absolute;
-    width: 100%;
   }
 
   .underline-top {
+    width: 0;
     top: -30px;
     left: 50%;
     transform: translateX(-50%);
   }
 
   .underline-bottom {
+    width: 0;
     bottom: -30px;
     left: 50%;
     transform: translateX(-50%);
@@ -110,9 +203,10 @@
 
   .scroll-dot {
     position: absolute;
-    height: 8px;
-    width: 30px;
+    height: 6px;
+    width: 50px;
     background: $bg-light-dark;
+    border: 1px solid $bg-accent;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
@@ -120,17 +214,23 @@
 
   .scroll-dot-left {
     left: 50%;
-    transform: translate(calc(-150% - 2em), -50%);
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(calc(-150% - 1em), -50%);
     background: $bg-accent;
   }
 
   .scroll-dot-middle {
     left: 50%;
+    opacity: 0;
+    visibility: hidden;
     transform: translate(-50%, -50%);
   }
 
   .scroll-dot-right {
     left: 50%;
-    transform: translate(calc(100% + 1em), -50%);
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(calc(50% + 1em), -50%);
   }
 }
