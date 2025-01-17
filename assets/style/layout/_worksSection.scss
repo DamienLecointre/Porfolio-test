@@ -11,8 +11,24 @@
     left: 0;
 
     h3 {
-      font-size: 10rem;
+      font-size: $font-size160;
       text-align: center;
+    }
+  }
+
+  .works-title {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .works-title-slide-show {
+    animation: worksTitleSlideShow 4s ease-out 1.5s forwards;
+    
+    @keyframes worksTitleSlideShow {
+      to {
+        opacity: 1;
+        visibility: visible;
+      }
     }
   }
 
@@ -43,6 +59,32 @@
     flex: none;
   }
 
+  .website1,
+  .website2,
+  .website3 {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .website1-show {
+    animation: websiteShow 5s ease-in-out 1.5s forwards;
+    
+    @keyframes websiteShow {
+      to {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .website2-show {
+    animation: websiteShow 5s ease-in-out 2s forwards;
+  }
+
+  .website3-show {
+    animation: websiteShow 5s ease-in-out 2.5s forwards;
+  }
+
   .project-content {
     position: relative;
     height: 100%;
@@ -51,6 +93,7 @@
     border: 1px solid $bg-accent;
     overflow: hidden;
     transition: all 0.5s ease-in-out;
+    cursor: pointer;
 
     img {
       width: 100%;
@@ -127,17 +170,41 @@
     z-index: 5;
   }
 
+  .inprogess-title {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   .underline-content {
     position: absolute;
     width: 100%;
+    overflow-x: hidden;
   }
 
   .underline-top {
     top: 20px;
   }
 
+  .underline-high-full-width {
+    animation: underlineFullWidth 4.5s ease-out .5s forwards;
+    
+    @keyframes underlineFullWidth {
+      to {
+        transform: translateX(0);
+      }
+    }
+  }
+
   .underline-bottom {
     bottom: 20px;
+  }
+
+  .underline-low-full-width {
+    animation: underlineFullWidth 4.5s ease-out forwards;
   }
 
   .chevron-slider {
@@ -156,8 +223,10 @@
 
   .fa-chevron-left,
   .fa-chevron-right {
-    font-size: 1.5rem;
+    font-size: $font-size24;
     color: $color-accent;
+    opacity: 0;
+    visibility: hidden;
     transform: scale(1);
     transition: all .2s ease-in-out;
     cursor: pointer;
@@ -167,10 +236,22 @@
     }
   }
 
+  .chevron-show {
+    animation: chevronShow 1s ease-in-out 1.5s forwards;
+
+    @keyframes chevronShow {
+      to {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
   .underline {
     height: 1px;
     width: 100%;
     background: $bg-accent;
+    transform: translateX(-100%);
   }
 
   .scroll-dot-container {
@@ -190,367 +271,22 @@
     width: 40px;
     background: $bg-light-dark;
     border: 1px solid $bg-accent;
+    opacity: 0;
+    visibility: hidden;
   }
 
   .scroll-dot.active {
     background: $bg-accent;
   }
-
- 
   
+  .scroll-dot-show {
+    animation: scrollDotShow 3s ease-in-out .5s forwards;
+    
+    @keyframes scrollDotShow {
+      to {
+        opacity: 1;
+        visibility: visible;
+      } 
+    }
+  }
 }
-//     h3 {
-//       font-size: 10rem;
-//       text-align: center;
-//     }
-
-//     .works-title {
-//       opacity: 0;
-//       visibility: hidden;
-//     }
-
-//     .works-title-slide-down {
-//       animation: worksTitleSlideDown 5s ease-out 1.5s forwards;
-
-//       @keyframes worksTitleSlideDown {
-//         to {
-//           opacity: 1;
-//           visibility: visible;
-//         }
-//       }
-//     }
-
-//   }
-
-//   .projects-container {
-//     position: relative;
-//     height: 100%;
-//     width: 100%;
-//     display: flex;
-//     align-items: center;
-
-//     // a {
-//     //   position: relative;
-//     //   display: flex;
-//     //   align-items: center;
-//     //   justify-content: center;
-//     // }
-
-//     h5 {
-//       font-size: $font-size19;
-//       color: $color-accent;
-//     }
-//   }
-
-//   .gallery-wrapper {
-//     height: 100%;
-//     width: 100%;
-//     display: flex;
-//     align-items: center;
-//   }
-
-//   .projects-wrapper {
-//     height: 100%;
-//     width: 100%;
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     flex: none;
-//   }
-
-//   .scroll-dot-left-clicked {
-//     animation: scrollDotLeftClicked  3s ease-in-out forwards;
-
-//     @keyframes scrollDotLeftClicked {
-//       to {
-//         transform: translate(0, -50%);
-//       }
-//     }
-//   }
-
-//   .project-content {
-//     position: relative;
-//     height: 60%;
-//     width: calc((100% - 4em) / 3);
-//     background: $bg-light-dark;
-//     border: 1px solid $bg-accent;
-//     overflow: hidden;
-//     cursor: pointer;
-
-//     &::before {
-//       content: '';
-//       position: absolute;
-//       height: 100%;
-//       width: 100%;
-//       background: $bg-accent;
-//       opacity: 0;
-//       top: 0;
-//       left: 0;
-//       transition: all .5s ease-in-out;
-//       z-index: 1;
-//     }
-
-//     &::after {
-//       content: '';
-//       position: absolute;
-//       height: 2px;
-//       width: 70%;
-//       background: $bg-light;
-//       top: 50%;
-//       left: 50%;
-//       transform: translate(-50%, -50%) scaleX(0);
-//       transition: all .5s ease-in-out;
-//       z-index: 5;
-//     }
-
-//     &:hover {
-//       border: 1px solid $bg-light;
-//     }
-
-//     &:hover::before {
-//       opacity: 1;
-//     }
-
-//     &:hover::after {
-//       transform: translate(-50%, -50%) scaleX(100%);
-//     }
-
-//     &:hover .project-title {
-//       transform: translateY(320%);
-//     }
-
-//     &:hover .project-subtitle {
-//       transform: translateY(-380%);
-//     }
-
-//     &:hover .project-icons-container {
-//       opacity: 1;
-//       visibility: visible;
-//       transition: all .8s ease-in-out;
-//     }
-
-//     &:hover .project-details {
-//       transform: translateY(0);
-//     }
-
-//     img {
-//       width: 100%;
-//     }
-
-//     .project-title,
-//     .project-subtitle {
-//       position: absolute;
-//       font-size: $font-size16;
-//       font-weight: $font-weight400;
-//       color: $color-light;
-//       letter-spacing: .15rem;
-//       width: 100%;
-//       text-align: center;
-//       transition: all .5s ease-in-out;
-//       z-index: 5;
-//     }
-
-//     .project-title {
-//       top: 0;
-//       font-weight: $font-weight500;
-//       transform: translateY(-100%);
-//     }
-
-//     .project-subtitle {
-//       font-size: $font-size12;
-//       bottom: 0;
-//       transform: translateY(100%);
-//       padding: 0 $space-small1;
-//     }
-//   }
-
-//   .project-icons-container {
-//     position: absolute;
-//     width: 40%;
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     background: $bg-accent;
-//     left: 50%;
-//     bottom: 50%;
-//     padding: 0 $space-small1;
-//     opacity: 0;
-//     visibility: hidden;
-//     transform: translate(-50%, 50%);
-//     transition: transform .5s ease-in-out;
-//     z-index: 10;
-//   }
-
-//   // .website1 {
-//   //   left: 0;
-//   //   opacity: 0;
-//   //   visibility: hidden;
-//   //   transform: translate(0, -50%);
-//   // }
-
-//   // .website1-show {
-//   //   animation: websiteShow 5s ease-in-out 1.5s forwards;
-
-//   //   @keyframes websiteShow {
-//   //     to {
-//   //       opacity: 1;
-//   //       visibility: visible;
-//   //     }
-//   //   }
-//   // }
-
-//   // .website2 {
-//   //   left: 50%;
-//   //   opacity: 0;
-//   //   transform: translate(-50%, -50%);
-//   // }
-
-//   // .website2-show {
-//   //   animation: websiteShow 5s ease-in-out 2s forwards;
-//   // }
-
-//   // .website3 {
-//   //   right: 0;
-//   //   opacity: 0;
-//   //   transform: translate(0, -50%);
-//   // }
-
-//   // .website3-show {
-//   //   animation: websiteShow 5s ease-in-out 2.5s forwards;
-//   // }
-
-
-//   // .website4 {
-//   //   right: 0;
-//   //   transform: translate(calc(100% + 2em), -50%);
-//   // }
-
-//   // .website5 {
-//   //   right: 0;
-//   //   transform: translate(calc(200% + 4em), -50%);
-//   // }
-
-//   // .website6 {
-//   //   right: 0;
-//   //   transform: translate(calc(300% + 6em), -50%);
-//   // }
-
-//   .underline-content {
-//     position: absolute;
-//     width: 100%;
-//   }
-
-//   .underline-top {
-//     top: 30px;
-//     left: 50%;
-//     transform: translateX(-120vw);
-//   }
-
-//   .underline-top-full-width {
-//     animation: underlineFullWidth 4.5s ease-out .5s forwards;
-
-//     @keyframes underlineFullWidth {
-//       to {
-//         transform: translateX(-50%);
-//       }
-//     }
-//   }
-
-//   .underline-bottom {
-//     bottom: 30px;
-//     left: 50%;
-//     transform: translateX(-120vw);
-//   }
-
-//   .underline-bottom-full-width {
-//     animation: underlineFullWidth 4.5s ease-out forwards;
-//   }
-
-//   .underline {
-//     position: absolute;
-//     height: 1px;
-//     width: 100%;
-//     background: $bg-accent;
-//   }
-
-//   .chevron-slider {
-//     position: absolute;
-//     width: 10%;
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     background: #0a0a0a;
-//     // opacity: 0;
-//     // visibility: hidden;
-//     top: -10px;
-//     left: 50%;
-//     transform: translateX(-50%) scale(0);
-//     padding: 0 $space-tiny2;
-//     z-index: 5;
-//   }
-
-//   .chevron-slider-show {
-//     animation: chevronSliderShow 1s ease-in-out 4.5s forwards;
-
-//     @keyframes chevronSliderShow {
-//       to {
-//         // opacity: 1;
-//         // visibility: visible;
-//         transform: translateX(-50%) scale(100%);
-//       } 
-//     }
-//   }
-
-//   .fa-chevron-left,
-//   .fa-chevron-right {
-//     font-size: 1.5rem;
-//     color: $color-light;
-//     cursor: pointer;
-//     transition: all .2s ease-in-out;
-
-//     &:hover {
-//       color: $bg-accent;
-//       transform: scale(1.2);
-//     }
-//   }
-
-//   .scroll-dot {
-//     position: absolute;
-//     height: 6px;
-//     width: 50px;
-//     background: $bg-light-dark;
-//     border: 1px solid $bg-accent;
-//     top: 50%;
-//     transform: translateY(-50%);
-//     cursor: pointer;
-//   }
-
-//   .scroll-dot.active {
-//     background: $bg-accent;
-//   }
-
-//   .scroll-dot-show {
-//     animation: scrollDotShow 3s ease-in-out 3s forwards;
-
-//     @keyframes scrollDotShow {
-//       to {
-//         opacity: 1;
-//         visibility: visible;
-//       } 
-//     }
-//   }
-
-//   .scroll-dot-left {
-//     left: 50%;
-//     opacity: 0;
-//     visibility: hidden;
-//     transform: translate(calc(-100% - .5em), -50%);
-//   }
-
-//   .scroll-dot-right {
-//     left: 50%;
-//     opacity: 0;
-//     visibility: hidden;
-//     transform: translate(.5em, -50%);
-//   }
-// }

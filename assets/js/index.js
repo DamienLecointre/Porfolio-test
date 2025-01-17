@@ -61,12 +61,20 @@ const projectsWrapper = document.querySelector(".projects-wrapper");
 const website1 = document.querySelector(".website1");
 const website2 = document.querySelector(".website2");
 const website3 = document.querySelector(".website3");
-const underlineTop = document.querySelector(".underline-top");
-const underlineBottom = document.querySelector(".underline-bottom");
+const underlineHigh = document.querySelector(".underline-high");
+const underlineLow = document.querySelector(".underline-low");
 const scrollDotLeft = document.querySelector(".scroll-dot-left");
 const scrollDotRight = document.querySelector(".scroll-dot-right");
-const chevronSlider = document.querySelector(".chevron-slider");
+const chevronLeft = document.querySelector(".fa-chevron-left");
+const chevronRight = document.querySelector(".fa-chevron-right");
 const worksLink = document.querySelector(".works-link");
+
+// SLIDE CARROUSEL CONSTANTS
+
+const galleryWrapper = document.querySelector(".gallery-wrapper");
+const leftArrow = document.querySelector(".fa-chevron-left");
+const rightArrow = document.querySelector(".fa-chevron-right");
+const dots = document.querySelectorAll(".scroll-dot");
 
 // console.log(chevronSlider);
 
@@ -212,52 +220,33 @@ resumeArrow.addEventListener("click", () => {
   experienceContainer.classList.add("experience-container-slide-up2");
   experienceContainer.classList.remove("experience-container-slide-up");
   resumeContainer.classList.add("resume-container-slide-up");
-  worksTitle.classList.add("works-title-slide-down");
-  underlineTop.classList.add("underline-top-full-width");
-  underlineBottom.classList.add("underline-bottom-full-width");
+  worksTitle.classList.add("works-title-slide-show");
+  underlineHigh.classList.add("underline-high-full-width");
+  underlineLow.classList.add("underline-low-full-width");
   website1.classList.add("website1-show");
   website2.classList.add("website2-show");
   website3.classList.add("website3-show");
   scrollDotLeft.classList.add("scroll-dot-show");
   scrollDotRight.classList.add("scroll-dot-show");
-  chevronSlider.classList.add("chevron-slider-show");
+  chevronLeft.classList.add("chevron-show");
+  chevronRight.classList.add("chevron-show");
   resumeLink.classList.remove("navLink-visited");
   worksLink.classList.add("navLink-visited");
 });
 
 // SLIDE CARROUSEL WORKS CONTAINER
 
-// let scrollContainer = document.querySelector(".gallery-wrapper");
-// let chevronLeft = document.querySelector(".fa-chevron-left");
-// let chevronRight = document.querySelector(".fa-chevron-right");
-
-// chevronLeft.addEventListener("click", () => {
-//   scrollContainer.style.scrollBehavior = "smooth";
-//   scrollContainer.scrollLeft += "100%";
-// });
-
-// **********************************************************************
-
-// Sélection des éléments
-const galleryWrapper = document.querySelector(".gallery-wrapper");
-const leftArrow = document.querySelector(".fa-chevron-left");
-const rightArrow = document.querySelector(".fa-chevron-right");
-const dots = document.querySelectorAll(".scroll-dot");
-
-let currentIndex = 0; // Index actuel du slider
+let currentIndex = 0;
 const totalSlides = document.querySelectorAll(".projects-wrapper").length;
 
-// Fonction pour mettre à jour la position du slider
 function updateSlider(index) {
-  const offset = -index * 100; // Décalage en pourcentage
+  const offset = -index * 100;
   galleryWrapper.style.transform = `translateX(${offset}%)`;
 
-  // Mise à jour des indicateurs actifs
   dots.forEach((dot) => dot.classList.remove("active"));
   dots[index].classList.add("active");
 }
 
-// Gestion des flèches
 leftArrow.addEventListener("click", () => {
   currentIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
   updateSlider(currentIndex);
@@ -268,7 +257,6 @@ rightArrow.addEventListener("click", () => {
   updateSlider(currentIndex);
 });
 
-// Gestion des dots (facultatif)
 dots.forEach((dot, index) => {
   dot.addEventListener("click", () => {
     currentIndex = index;

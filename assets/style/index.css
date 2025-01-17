@@ -1870,6 +1870,26 @@ p {
   font-size: 10rem;
   text-align: center;
 }
+#homepage-container .works-title {
+  opacity: 0;
+  visibility: hidden;
+}
+#homepage-container .works-title-slide-show {
+  -webkit-animation: worksTitleSlideShow 4s ease-out 1.5s forwards;
+          animation: worksTitleSlideShow 4s ease-out 1.5s forwards;
+}
+@-webkit-keyframes worksTitleSlideShow {
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes worksTitleSlideShow {
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 #homepage-container .projects-container {
   position: relative;
   height: 100%;
@@ -1907,6 +1927,36 @@ p {
       -ms-flex: none;
           flex: none;
 }
+#homepage-container .website1,
+#homepage-container .website2,
+#homepage-container .website3 {
+  opacity: 0;
+  visibility: hidden;
+}
+#homepage-container .website1-show {
+  -webkit-animation: websiteShow 5s ease-in-out 1.5s forwards;
+          animation: websiteShow 5s ease-in-out 1.5s forwards;
+}
+@-webkit-keyframes websiteShow {
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes websiteShow {
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+#homepage-container .website2-show {
+  -webkit-animation: websiteShow 5s ease-in-out 2s forwards;
+          animation: websiteShow 5s ease-in-out 2s forwards;
+}
+#homepage-container .website3-show {
+  -webkit-animation: websiteShow 5s ease-in-out 2.5s forwards;
+          animation: websiteShow 5s ease-in-out 2.5s forwards;
+}
 #homepage-container .project-content {
   position: relative;
   height: 100%;
@@ -1916,6 +1966,7 @@ p {
   overflow: hidden;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+  cursor: pointer;
 }
 #homepage-container .project-content img {
   width: 100%;
@@ -1991,15 +2042,45 @@ p {
   transition: all 0.5s ease-in-out;
   z-index: 5;
 }
+#homepage-container .inprogess-title {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
 #homepage-container .underline-content {
   position: absolute;
   width: 100%;
+  overflow-x: hidden;
 }
 #homepage-container .underline-top {
   top: 20px;
 }
+#homepage-container .underline-high-full-width {
+  -webkit-animation: underlineFullWidth 4.5s ease-out 0.5s forwards;
+          animation: underlineFullWidth 4.5s ease-out 0.5s forwards;
+}
+@-webkit-keyframes underlineFullWidth {
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes underlineFullWidth {
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
 #homepage-container .underline-bottom {
   bottom: 20px;
+}
+#homepage-container .underline-low-full-width {
+  -webkit-animation: underlineFullWidth 4.5s ease-out forwards;
+          animation: underlineFullWidth 4.5s ease-out forwards;
 }
 #homepage-container .chevron-slider {
   position: absolute;
@@ -2025,6 +2106,8 @@ p {
 #homepage-container .fa-chevron-right {
   font-size: 1.5rem;
   color: #ff6f28;
+  opacity: 0;
+  visibility: hidden;
   -webkit-transform: scale(1);
           transform: scale(1);
   -webkit-transition: all 0.2s ease-in-out;
@@ -2036,10 +2119,28 @@ p {
   -webkit-transform: scale(1.3);
           transform: scale(1.3);
 }
+#homepage-container .chevron-show {
+  -webkit-animation: chevronShow 1s ease-in-out 1.5s forwards;
+          animation: chevronShow 1s ease-in-out 1.5s forwards;
+}
+@-webkit-keyframes chevronShow {
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes chevronShow {
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
 #homepage-container .underline {
   height: 1px;
   width: 100%;
   background: #ff6f28;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 #homepage-container .scroll-dot-container {
   position: absolute;
@@ -2064,7 +2165,25 @@ p {
   width: 40px;
   background: #bdbdbd;
   border: 1px solid #ff6f28;
+  opacity: 0;
+  visibility: hidden;
 }
 #homepage-container .scroll-dot.active {
   background: #ff6f28;
+}
+#homepage-container .scroll-dot-show {
+  -webkit-animation: scrollDotShow 3s ease-in-out 0.5s forwards;
+          animation: scrollDotShow 3s ease-in-out 0.5s forwards;
+}
+@-webkit-keyframes scrollDotShow {
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+@keyframes scrollDotShow {
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
 }/*# sourceMappingURL=index.css.map */
