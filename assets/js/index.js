@@ -57,16 +57,18 @@ const resumeLink = document.querySelector(".resume-link");
 
 const worksContainer = document.querySelector(".works-container");
 const worksTitle = document.querySelector(".works-title");
+const projectsWrapper = document.querySelector(".projects-wrapper");
 const website1 = document.querySelector(".website1");
 const website2 = document.querySelector(".website2");
 const website3 = document.querySelector(".website3");
 const underlineTop = document.querySelector(".underline-top");
 const underlineBottom = document.querySelector(".underline-bottom");
-const worksArrow = document.querySelector(".works-arrow");
-const worksArrowCircle = document.querySelector(".works-arrow-circle");
-const worksChevron = document.querySelector(".works-chevron");
+const scrollDotLeft = document.querySelector(".scroll-dot-left");
+const scrollDotRight = document.querySelector(".scroll-dot-right");
+const chevronSlider = document.querySelector(".chevron-slider");
+const worksLink = document.querySelector(".works-link");
 
-// console.log(e.target.id);
+// console.log(chevronSlider);
 
 // -------------------------------------------------------------------------------
 
@@ -210,5 +212,66 @@ resumeArrow.addEventListener("click", () => {
   experienceContainer.classList.add("experience-container-slide-up2");
   experienceContainer.classList.remove("experience-container-slide-up");
   resumeContainer.classList.add("resume-container-slide-up");
+  worksTitle.classList.add("works-title-slide-down");
+  underlineTop.classList.add("underline-top-full-width");
+  underlineBottom.classList.add("underline-bottom-full-width");
+  website1.classList.add("website1-show");
+  website2.classList.add("website2-show");
+  website3.classList.add("website3-show");
+  scrollDotLeft.classList.add("scroll-dot-show");
+  scrollDotRight.classList.add("scroll-dot-show");
+  chevronSlider.classList.add("chevron-slider-show");
   resumeLink.classList.remove("navLink-visited");
+  worksLink.classList.add("navLink-visited");
+});
+
+// SLIDE CARROUSEL WORKS CONTAINER
+
+// let scrollContainer = document.querySelector(".gallery-wrapper");
+// let chevronLeft = document.querySelector(".fa-chevron-left");
+// let chevronRight = document.querySelector(".fa-chevron-right");
+
+// chevronLeft.addEventListener("click", () => {
+//   scrollContainer.style.scrollBehavior = "smooth";
+//   scrollContainer.scrollLeft += "100%";
+// });
+
+// **********************************************************************
+
+// Sélection des éléments
+const galleryWrapper = document.querySelector(".gallery-wrapper");
+const leftArrow = document.querySelector(".fa-chevron-left");
+const rightArrow = document.querySelector(".fa-chevron-right");
+const dots = document.querySelectorAll(".scroll-dot");
+
+let currentIndex = 0; // Index actuel du slider
+const totalSlides = document.querySelectorAll(".projects-wrapper").length;
+
+// Fonction pour mettre à jour la position du slider
+function updateSlider(index) {
+  const offset = -index * 100; // Décalage en pourcentage
+  galleryWrapper.style.transform = `translateX(${offset}%)`;
+
+  // Mise à jour des indicateurs actifs
+  dots.forEach((dot) => dot.classList.remove("active"));
+  dots[index].classList.add("active");
+}
+
+// Gestion des flèches
+leftArrow.addEventListener("click", () => {
+  currentIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
+  updateSlider(currentIndex);
+});
+
+rightArrow.addEventListener("click", () => {
+  currentIndex = currentIndex === totalSlides - 1 ? 0 : currentIndex + 1;
+  updateSlider(currentIndex);
+});
+
+// Gestion des dots (facultatif)
+dots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    currentIndex = index;
+    updateSlider(currentIndex);
+  });
 });
