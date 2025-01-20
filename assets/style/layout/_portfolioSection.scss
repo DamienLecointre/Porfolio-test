@@ -16,6 +16,10 @@
     transition: all 3s ease-in;
     // transition-delay: 2s;
     animation: PortfoliotextShow 1.5s ease-in 13s forwards;
+
+    @media only screen and (max-width: 960px)  {
+      width: 100%;
+    }
   }
 
   .portfolio-container-slide-up {
@@ -23,9 +27,46 @@
   }
 
   .portfolio-title {
-    text-align: center;
+    padding-left: 105px;
     @extend %item-visible;
     transform: translateY(0);
+    
+    @media only screen and (max-width: 1410px) {
+      font-size: $font-size192;
+    }
+
+    @media only screen and (max-width: 1250px) {
+      font-size: $font-size160;
+    }
+
+    @media only screen and (max-width: 1130px) {
+      font-size: 8rem;
+    }
+
+    @media only screen and (max-width: 800px) {
+      padding-left: 60px;
+    }
+
+    @media only screen and (max-width: 650px) {
+      font-size: 6rem;
+    }
+
+    @media only screen and (max-width: 560px) {
+      padding-left: 20px;
+    }
+
+    @media only screen and (max-width: 480px) {
+      font-size: 4rem;
+      padding-left: 50px;
+    }
+
+    @media only screen and (max-width: 400px) {
+      padding-left: 30px;
+    }
+
+    @media only screen and (max-width: 350px) {
+      padding-left: 10px;
+    }
   }
 
   .portfolio-title-slide-up {
@@ -56,6 +97,43 @@
     position: relative;
     top: -106px;
     left: 124px;
+
+    @media only screen and (max-width: 1410px) {
+      top: -92px;
+      left: 121px;
+    }
+
+    @media only screen and (max-width: 1250px) {
+      top: -77px;
+      left: 118px;
+    }
+
+    @media only screen and (max-width: 1130px) {
+      top: -65px;
+      left: 116px;
+    }
+
+    @media only screen and (max-width: 800px) {
+      left: 70px;
+    }
+
+    @media only screen and (max-width: 650px) {
+      top: -52px;
+      left: 68px;
+    }
+
+    @media only screen and (max-width: 480px) {
+      top: -36px;
+      left: 55px;
+    }
+
+    @media only screen and (max-width: 400px) {
+      left: 35px;
+    }
+
+    @media only screen and (max-width: 350px) {
+      left: 15px;
+    }
   }
 
   .subtitle-container-slide-up {

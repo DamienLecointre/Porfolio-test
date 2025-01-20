@@ -47,8 +47,11 @@
     letter-spacing: .15rem;
     text-transform: uppercase;
     background: none;
+    opacity: 0;
+    visibility: hidden;
     padding-top: $space-small1;
     margin: 0 auto;
+    animation: skipButtonShow 5s ease-in-out forwards;
     cursor: pointer;
 
     &::after {
@@ -66,7 +69,17 @@
     &:hover::after {
       transform: scale(1);
     }
-    
+
+    @keyframes skipButtonShow {
+      to {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    @media only screen and (max-width: 420px) {
+      font-size: $font-size16;
+    }
   }
 
   .intro-container {
@@ -99,6 +112,35 @@
         grid-template-columns: 100% 0;
       }  
     }
+    
+    @media only screen and (max-width: 960px) {
+      grid-template-rows: 0% 100%;
+      grid-template-columns: 1fr;
+
+      @keyframes loading {
+        25% {
+          grid-template-rows: 20% 80%;
+        }
+        35% {
+          grid-template-rows: 20% 80%;
+        }
+        50% {
+          grid-template-rows: 40% 60%;
+        }
+        60% {
+          grid-template-rows: 40% 60%;
+        }
+        75% {
+          grid-template-rows: 60% 40%;
+        }
+        85% {
+          grid-template-rows: 60% 40%;
+        }
+        100% {
+          grid-template-rows: 100% 0;
+        }  
+      }
+    }
   }
 
   .loading-container {
@@ -108,9 +150,13 @@
       position: relative;
       @extend %full-viewport;
       @extend %flex-end;
+
+      @media only screen and (max-width: 960px) {
+        align-items: flex-end;
+        justify-content: center;
+      }
     }
   }
-
 
   .loading-wrapper {
     display: flex;
@@ -157,6 +203,14 @@
     text-transform: uppercase;
     padding-left: $space-tiny2;
     padding-right: $space-small2;
+
+    @media only screen and (max-width: 960px) {
+      padding: 0 $space-tiny2 $space-small2;
+    }
+
+    @media only screen and (max-width: 420px) {
+      font-size: $font-size12;
+    }
   }
 
   .quote-container {
@@ -191,12 +245,19 @@
       font-weight: $font-weight500;
       line-height: 45px;
       color: $color-light-dark;
+      text-align: center;
+
+      @media only screen and (max-width: 420px) {
+        font-size: $font-size12;
+        line-height: 30px;
+      }
     }
   }
 
   .quote-wrapper {
     display: flex;
     align-items: center;
+    padding: 0 $space-small2;
 
     i {
       color: $color-accent;
@@ -209,11 +270,25 @@
     }
   }
 
+  .fa-quote-left {
+    padding-right: $space-tiny1;
+  }
+  .fa-quote-right {
+    padding-left: $space-tiny1;
+  }
+
   .text-container {
     position: relative;
     @extend %full-viewport;
+    display: flex;
+    align-items: center;
     background: $bg-light;
     padding-left: $space-small2;
+
+    @media only screen and (max-width: 960px) {
+      justify-content: center;
+      padding-left: 0;
+    }
 
     .text-wrapper {
       position: absolute;
@@ -296,6 +371,15 @@
       65% {
         display: none;
       } 
+    }
+  }
+
+  .intro1,
+  .intro2 {
+    text-wrap: nowrap;
+
+    @media only screen and (max-width: 420px) {
+      font-size: $font-size12;
     }
   }
 

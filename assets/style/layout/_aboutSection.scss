@@ -12,11 +12,15 @@
     transition: all 3s ease-in;
     z-index: 800;
 
+    @media only screen and (max-width: 960px) {
+      width: 100%;
+    }
+
     .text-container {
       position: absolute;
       top: 0;
       @extend %item-visible;
-      padding-left: 24em;
+      padding-left: 35%;
       transform: translateY(100vh);
       z-index: 500;
 
@@ -29,6 +33,18 @@
         font-size: $font-size16;
         color: $color-accent;
         padding: 0 $space-small1;
+      }
+
+      @media only screen and (max-width: 1345px) {
+        padding-left: 20%;
+      }
+
+      @media only screen and (max-width: 650px) {
+        padding-left: 10%;
+      }
+
+      @media only screen and (max-width: 570px) {
+        padding-left: 0;
       }
     }
   }
@@ -85,6 +101,22 @@
     @extend %item-hidden;
     padding-bottom: $space-small-tiny;
     transform: translateY(100vh);
+
+    @media only screen and (max-width: 960px) {
+      padding-bottom: 0.6em;
+    }
+
+    @media only screen and (max-width: 560px) {
+      padding-bottom: .8em;
+    }
+
+    @media only screen and (max-width: 480px) {
+      padding-bottom: 1em;
+    }
+
+    @media only screen and (max-width: 350px) {
+      padding-bottom: 1.2em;
+    }
   }
 
   .about-title-slide-up {
@@ -128,7 +160,11 @@
 
   .about-arrow {
     @extend %item-hidden;
-    transform: translateY(100vh);
+    transform: translate(0, 100vh);
+
+    @media only screen and (max-width: 480px) {
+      margin-left: -7%;
+    }
   }
 
   .about-arrow-slide-up {
@@ -138,17 +174,17 @@
       0%{
         opacity: 0;
         visibility: hidden;
-        transform: translateY(100vh);
+        transform: translate(0, 100vh);
       }
       20% {
         opacity: 0;
         visibility: hidden;
-        transform: translateY(0);
+        transform: translate(0, 0);
       }
       100% {
         opacity: 1;
         visibility: visible;
-        transform: translateY(0);
+        transform: translate(0, 0);
       }
     }
   }
