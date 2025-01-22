@@ -6,11 +6,6 @@
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: column;
-
-    @media only screen and (max-width: 960px) {
-      align-items: center;
-      flex-direction: row;
-    }
   }
   
   .copyright {
@@ -27,14 +22,13 @@
     @media only screen and (max-width: 960px) {
       writing-mode: horizontal-tb;
       transform: rotate(0deg);
-      top: -20px;
       left: 0;
+      top: -2px;
+      text-wrap: wrap;
     }
 
-    @media only screen and (max-width: 620px) {
-      font-size: .5rem;
-      text-wrap: wrap;
-      top: -27px;
+    @media only screen and (max-width: 550px) {
+      font-size: $font-size09;
     }
   }
   
@@ -42,7 +36,7 @@
     font-size: $font-size09;
     transform: rotate(90deg);
 
-    @media only screen and (max-width: 960px)  {
+    @media only screen and (max-width: 960px) {
       font-size: .5rem;
       transform: rotate(0deg);
     }
@@ -51,7 +45,7 @@
   .line-container {
     height: 100%;
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: -15px;
     overflow: hidden;
 
@@ -102,8 +96,7 @@
     overflow: hidden;
 
     @media only screen and (max-width: 960px) {
-      height: 100%;
-      justify-content: space-around;
+      display: none;
     }
   }
   
@@ -113,10 +106,6 @@
     width: 100%;
     margin-bottom: $space-small2;
     overflow: hidden;  
-    
-    @media only screen and (max-width: 960px) {
-      margin-bottom: 0;
-    }
   }
   
   .social-icons {
@@ -152,19 +141,11 @@
     transform: translateY(200%);
     color: $color-accent;
     @extend %transition-speed-all;
-
-    @media only screen and (max-width: 960px) {
-      font-size: $font-size12;
-    }
   }
   
   .icon-slide-top {
     transform: translateY(0);
     @extend %transition-speed-all;
-
-    @media only screen and (max-width: 960px) {
-      font-size: $font-size12;
-    }
   }
   
   .text-show {
@@ -190,11 +171,6 @@
       transform: scale(0);
       @extend %transition-slow-all;
     }
-
-    @media only screen and (max-width: 620px) {
-      font-size: .5rem;
-      left: 17px;
-    }
   }
 
   ul {
@@ -202,11 +178,6 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-
-    @media only screen and (max-width: 960px) {
-      height: 100%;
-      justify-content: space-around;
-    }
   }
   
   .nav-container {
@@ -215,7 +186,7 @@
     animation: PortfoliotextShow 3s ease-in-out 14s forwards;
 
     @media only screen and (max-width: 960px) {
-      align-items: flex-end;
+      display: none;
     }
   
     li {
@@ -241,15 +212,6 @@
 
       &:hover::after {
         width: 100%;
-      }
-
-      @media only screen and (max-width: 960px)  {
-        font-size: $font-size16;
-        padding-top: 0;
-      }
-
-      @media only screen and (max-width: 480px) {
-        font-size: $font-size12;
       }
     }
   }

@@ -23,6 +23,8 @@
       padding-left: 35%;
       transform: translateY(100vh);
       z-index: 500;
+      overflow: hidden;
+      overflow-y: scroll;
 
       p:not(:nth-child(1)) {
         text-align: justify;
@@ -39,14 +41,22 @@
         padding-left: 20%;
       }
 
-      @media only screen and (max-width: 650px) {
-        padding-left: 10%;
+      @media only screen and (max-width: 960px) {
+        padding: 4.5em 1em 0;
       }
 
-      @media only screen and (max-width: 570px) {
-        padding-left: 0;
+      @media only screen and (max-width: 680px) {
+        max-height: 78%;
       }
     }
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, transparent 0em, transparent 3.5em, #ff6f28 3.5em, transparent 100%);
   }
 
   .about-container-slide-up {
@@ -101,21 +111,27 @@
     @extend %item-hidden;
     padding-bottom: $space-small-tiny;
     transform: translateY(100vh);
+    text-wrap: nowrap;
 
     @media only screen and (max-width: 960px) {
       padding-bottom: 0.6em;
     }
 
-    @media only screen and (max-width: 560px) {
+    @media only screen and (max-width: 870px) {
       padding-bottom: .8em;
     }
 
-    @media only screen and (max-width: 480px) {
+    @media only screen and (max-width: 600px) {
       padding-bottom: 1em;
     }
 
-    @media only screen and (max-width: 350px) {
-      padding-bottom: 1.2em;
+    @media only screen and (max-width: 500px) {
+      font-size: 6rem;
+      height: 100%;
+      text-align: end;
+      writing-mode: sideways-lr;
+      padding-top: .6em;
+      padding-bottom: 0;
     }
   }
 

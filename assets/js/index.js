@@ -5,6 +5,7 @@ const introContainer = document.querySelector(".container");
 // const portfolioContainer = document.querySelector(".portfolio-container");
 const copyright = document.querySelector(".copyright");
 const navLine = document.querySelector(".line");
+const underlineMobile = document.querySelector(".underline-mobile");
 const socialContainer = document.querySelector(".social-container");
 const navContainer = document.querySelector(".nav-container");
 
@@ -34,6 +35,7 @@ const aboutLink = document.querySelector(".about-link");
 
 const resumeContainer = document.querySelector(".resume-container");
 const resumeTitle = document.querySelector(".resume-title");
+const resumeWrapper = document.querySelector(".resume-wrapper");
 const skillsContainer = document.querySelector(".skills-container");
 const htmlLevel = document.querySelector(".html-level");
 const cssLevel = document.querySelector(".css-level");
@@ -76,7 +78,7 @@ const leftArrow = document.querySelector(".fa-chevron-left");
 const rightArrow = document.querySelector(".fa-chevron-right");
 const dots = document.querySelectorAll(".scroll-dot");
 
-// console.log(chevronSlider);
+// console.log(chevronRight);
 
 // -------------------------------------------------------------------------------
 
@@ -88,6 +90,8 @@ skipBtn.addEventListener("click", () => {
   portfolioArrow.classList.add("skip-text-animation");
   copyright.classList.add("skip-text-animation");
   navLine.classList.add("skip-line-animation");
+  navMobileBtn.classList.add("nav-mobile-btn-skip-animation");
+  underlineMobile.classList.add("underline-mobile-skip-line-animation");
   socialContainer.classList.add("skip-text-animation");
   navContainer.classList.add("skip-text-animation");
 });
@@ -206,6 +210,27 @@ resumeLink.addEventListener("click", () => {
   resumeLink.classList.add("navLink-visited");
 });
 
+// SLIDERS RESUME SECTION
+
+const tabChevron1 = document.querySelector(".tab-chevron1");
+const tabChevron2 = document.querySelector(".tab-chevron2");
+const tabContainer = document.querySelector(".tab-container");
+const experienceContent1 = document.querySelector(".experience-content1");
+const experienceContent2 = document.querySelector(".experience-content2");
+const skillsWrapperResponsive = document.querySelector(
+  ".skills-wrapper-responsive"
+);
+
+tabChevron1.addEventListener("click", () => {
+  resumeWrapper.classList.toggle("competence-show");
+  tabChevron1.classList.toggle("chevron-rotate");
+  skillsWrapperResponsive.classList.toggle("skills-wrapper-responsive-show");
+});
+
+tabChevron2.addEventListener("click", () => {
+  resumeWrapper.classList.toggle("formations-show");
+});
+
 // SKIP EXPERIENCE CONTAINER TO WORKS CONTAINER
 
 resumeArrow.addEventListener("click", () => {
@@ -262,4 +287,19 @@ dots.forEach((dot, index) => {
     currentIndex = index;
     updateSlider(currentIndex);
   });
+});
+
+// SHOW BURGERMENU
+
+const navMobileBtn = document.querySelector(".nav-mobile-btn");
+const lineMobileTop = document.querySelector(".line-mobile-top");
+const lineMobileMiddle = document.querySelector(".line-mobile-middle");
+const lineMobileBottom = document.querySelector(".line-mobile-bottom");
+const navMobileWrapper = document.querySelector(".nav-mobile-wrapper");
+
+navMobileBtn.addEventListener("click", () => {
+  lineMobileTop.classList.toggle("line-mobile-top-crossline");
+  lineMobileMiddle.classList.toggle("line-mobile-middle-crossline");
+  lineMobileBottom.classList.toggle("line-mobile-bottom-crossline");
+  navMobileWrapper.classList.toggle("nav-mobile-wrapper-show");
 });
