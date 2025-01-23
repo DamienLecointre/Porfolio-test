@@ -12,6 +12,10 @@
     transform: translateY(0);
     z-index: 500;
 
+    @media only screen and (max-width: 960px) {
+      width: 100%;
+    }
+
     h3 {
       // font-size: $font-size192;
       font-size: clamp(7rem, 5.182rem + 9.09vw, 12rem);
@@ -23,6 +27,15 @@
 
       @media only screen and (max-width: 1180px) {
         font-size: clamp(7rem, 5rem + 4vw, 12rem);
+      }
+
+      @media only screen and (max-width: 960px) {
+        padding-top: 4em;
+      }
+
+      @media only screen and (max-width: 710px) {
+        writing-mode: sideways-lr;
+        padding-top: 30px;
       }
     }
 
@@ -67,6 +80,13 @@
     }
   }
 
+  .title-section3 {
+
+    @media only screen and (max-width: 710px) {
+      display: none;
+    }
+  }
+
   .tab-container {
     position: relative;
     display: none;
@@ -74,6 +94,21 @@
     width: 100%;
 
     @media only screen and (max-width: 1520px) {
+      display: block;
+    }
+
+    @media only screen and (max-width: 960px) {
+      height: 61%;
+      padding-top: 9em;
+    }
+  }
+
+  .tab-experience {
+    display: none;
+    height: 100%;
+    padding-top: 0;
+
+    @media only screen and (max-width: 710px) {
       display: block;
     }
   }
@@ -99,6 +134,14 @@
       &:hover {
         transform: scale(1.2);
       }
+    }
+  }
+
+  .tab-chevron3 {
+    transform: scale(1) rotate(180deg);
+
+    &:hover {
+      transform: scale(1.2) rotate(180deg);
     }
   }
 
@@ -130,9 +173,15 @@
   }
 
   .skills-wrapper-responsive {
+    height: 100%;
     opacity: 0;
     visibility: hidden;
+    padding-right: $space-small2;
     @extend %transition-medium-all;
+
+    @media only screen and (max-width: 960px) {
+      height: 157%;
+    }
   }
 
   .skills-wrapper-responsive-show {
@@ -153,15 +202,15 @@
 
     @media only screen and (max-width: 1520px) {
       grid-template-columns: 8% 8% 1fr;
-    }  
+    }
+    
+    @media only screen and (max-width: 630px) {
+      grid-template-columns: 10% 10% 1fr;
+    }
   }
 
   .competence-show {
     grid-template-columns: 25% 8% 1fr;
-  }
-
-  .formations-show {
-    grid-template-columns: 8% 40% 1fr;
   }
 
   .skills-container {
@@ -175,7 +224,6 @@
 
   .skills-wrapper,
   .skills-wrapper-responsive {
-    height: 100%;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -183,15 +231,12 @@
   }
 
   .skills-wrapper {
+    height: 100%;
     padding-top: $space-small2;
 
     @media only screen and (max-width: 1520px) {
       display: none;
     }
-  }
-
-  .skills-wrapper-responsive {
-    padding-right: $space-small2;
   }
 
   .skills-content {
@@ -289,12 +334,29 @@
     }
   }
 
+  .formations-show {
+    grid-template-columns: 8% 45% 1fr;
+  }
+
   .formation-wrapper-responsive {
     display: none;
+    max-height: 495px;
     opacity: 0;
     visibility: hidden;
     @extend %transition-medium-all;
     overflow-y: scroll;
+    padding-left: 2em;
+    margin-right: 2.2em;
+
+    @media only screen and (max-width: 960px) {
+      max-height: 395px;
+    }
+  }
+
+  .formation-wrapper-responsive-show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
   }
 
   .formation-wrapper {
@@ -336,23 +398,54 @@
       padding: 0 2em;
       overflow-y: scroll;
     }
+
+    @media only screen and (max-width: 960px) {
+      margin-top: 9em;
+      max-height: 395px;
+    }
+
+    @media only screen and (max-width: 710px) {
+      overflow-y: visible;
+      padding: 0 0 0 2em;
+    }
+  }
+
+  .experience-wrapper-responsive {
+    position: relative;
+    max-height: 395px;
+    overflow-y: scroll;
+    padding-right: 1em;
+    margin-right: 3em;
+    z-index: 500;
+  }
+
+  .experience-content,
+  .experience-content-responsive {
+    display: flex;
   }
 
   .experience-content {
-    display: flex;
 
-    @media only screen and (max-width: 1520px) {
-      height: 45%;
+    @media only screen and (max-width: 960px) {
+      margin: 1em 0;
+    }
+
+    @media only screen and (max-width: 710px) {
+      display: none;
+    }
+  }
+
+  .experience-content-responsive {
+    display: none;
+
+    @media only screen and (max-width: 710px) {
+      display: flex;
     }
   }
 
   .experience-content:nth-of-type(1) {
     padding-top: $space-small2;
     padding-bottom: $space-small1;
-
-    @media only screen and (max-width: 1520px) {
-      height: 45%;
-    }
   }
 
   .text-content {

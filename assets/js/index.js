@@ -220,6 +220,9 @@ const experienceContent2 = document.querySelector(".experience-content2");
 const skillsWrapperResponsive = document.querySelector(
   ".skills-wrapper-responsive"
 );
+const formationWrapperResponsive = document.querySelector(
+  ".formation-wrapper-responsive"
+);
 
 tabChevron1.addEventListener("click", () => {
   resumeWrapper.classList.toggle("competence-show");
@@ -229,6 +232,10 @@ tabChevron1.addEventListener("click", () => {
 
 tabChevron2.addEventListener("click", () => {
   resumeWrapper.classList.toggle("formations-show");
+  tabChevron2.classList.toggle("chevron-rotate");
+  formationWrapperResponsive.classList.toggle(
+    "formation-wrapper-responsive-show"
+  );
 });
 
 // SKIP EXPERIENCE CONTAINER TO WORKS CONTAINER
